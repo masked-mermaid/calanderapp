@@ -1,8 +1,18 @@
+import 'package:calanderapp/hiveObjects/category.dart';
+import 'package:calanderapp/hiveObjects/event.dart';
 import 'package:flutter/material.dart';
 import'package:hive_flutter/hive_flutter.dart';
 
+late Box<Category> categoryBox;
+late Box<Event> eventBox;
+const String categoryBoxName ="categories";
+const String events = "events";
+
 void main() async{
   await Hive.initFlutter();
+  categoryBox =await Hive.openBox(categoryBoxName);
+  eventBox = await Hive.openBox(events);
+
   runApp(const MyApp());
 }
 
