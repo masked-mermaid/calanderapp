@@ -1,5 +1,5 @@
 import 'package:calanderapp/hiveObjects/category.dart';
-import 'package:calanderapp/hiveObjects/event.dart';
+import 'package:calanderapp/hiveObjects/event.dart'; 
 import 'package:flutter/material.dart';
 import'package:hive_flutter/hive_flutter.dart';
 
@@ -10,6 +10,12 @@ const String events = "events";
 
 void main() async{
   await Hive.initFlutter();
+
+
+  Hive.registerAdapter<Category>(CategoryAdapter());
+  Hive.registerAdapter<Event>(EventAdapter());
+
+
   categoryBox =await Hive.openBox(categoryBoxName);
   eventBox = await Hive.openBox(events);
 
