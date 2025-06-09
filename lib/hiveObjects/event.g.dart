@@ -17,7 +17,7 @@ class EventAdapter extends TypeAdapter<Event> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Event(
-      fields[0] as String,
+      (fields[0] as HiveList).castHiveList(),
       fields[1] as DateTime,
       fields[3] as String,
       fields[2] as String,

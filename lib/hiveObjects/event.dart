@@ -1,7 +1,9 @@
 import 'dart:typed_data';
 import 'package:flutter/services.dart';
+import 'category.dart';
 
 import 'package:hive_flutter/hive_flutter.dart';
+
 
 part 'event.g.dart';
 
@@ -9,7 +11,7 @@ part 'event.g.dart';
 class Event extends HiveObject{
 
 @HiveField(0)
-String category;
+HiveList<Category> category;
 
 @HiveField(1)
 DateTime date;

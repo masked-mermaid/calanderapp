@@ -5,6 +5,7 @@ import'package:hive_flutter/hive_flutter.dart';
 
 late Box<Category> categoryBox;
 late Box<Event> eventBox;
+
 const String categoryBoxName ="categories";
 const String events = "events";
 
